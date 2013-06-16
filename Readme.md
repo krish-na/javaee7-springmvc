@@ -3,7 +3,7 @@ Demo web application demonstrating some of the key features of Java EE 7 and Spr
 
 <h2>Setup</h2>
 
-JDK7: http://www.oracle.com/technetwork/java/javaee/downloads/index.html <br>
+JDK7: http://www.oracle.com/technetwork/java/javaee/downloads/java-ee-sdk-7-downloads-1956236.html <br>
 Maven 3: http://maven.apache.org/index.html <br>
 Tomcat 7: http://tomcat.apache.org/download-70.cgi <br>
  
