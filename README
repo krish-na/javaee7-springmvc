@@ -18,12 +18,18 @@ Outline:
 Library: Hibernate Validator 5.0.1.Final
 
 Description: 
-With JSR 349, one can validate a input form/bean's fields (entire bean graph) and method parameters and return values. This allows a very powerful way to validate state of the object, through the use of annotations. When there is a form field error, we return an error to the client via JSON.
+With JSR 349, one can validate a input form/bean's fields (entire bean graph) and method parameters and return values. This allows a very powerful way to validate state of the object, through the use of annotations. When there is a form field error, we return an error to the client via JSON. Custom Validators can be built, which allows business logic to be validated using annotations - promotes code reuseablity.
 
 Classes:
 - com.sampleapp.mvc.model.SignupForm.java
 - com.sampleapp.mvc.validator.Account.java (Custom validator example)
 - com.sampleapp.mvc.validator.AccountValidator.java (Custom validator example)
+
+Sampel URLs to test Form validation
+You could use Postman - REST client Chrome extension to invoke REST calls. To import in Postman - http://www.getpostman.com/collections/930526effaffc5f1c721
+
+- POST: http://localhost:8080/sampleapp/prismUser 
+- Form data: firstName, lastName, email
 
 Reference:
 http://beanvalidation.org/1.1/spec/#introduction
