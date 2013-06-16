@@ -1,5 +1,5 @@
 <h1>Introduction</h1>
-Demo application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2. There are no static pages for the web application, the focus is on building RESTful JSON services.
+Demo web application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2, all the way form validations, exception handling, to building RESTful json services. There are no static pages for the web application, the focus is on building RESTful JSON services.
 
 <h2>Setup</h2>
 
