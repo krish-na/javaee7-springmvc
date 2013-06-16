@@ -1,7 +1,29 @@
-Demo web application of the PRISM system. Demonstrating some of the key features releases of Java EE 7 and Spring MVC 3.2.
+Demo application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2.
 
-- Java EE 7: Input bean validation (including custom validator) using JSR(349) reference implementation Hibernate Validator 5.0.1.Final 
-- Spring MVC 3.2 Exception handling using @ControllerAdvice annotation 
+1. Java EE 7: Bean validation using JSR(349) reference implementation Hibernate 
+
+Library: Hibernate Validator 5.0.1.Final
+
+Description: 
+With JSR 349, one can validate a bean's fields (entire bean graph) and method parameters and return values. This allows a very powerful way to validate state of the object, through the use of annotations.
+
+Classes:
+- com.sampleapp.mvc.model.SignupForm.java
+- com.sampleapp.mvc.validator.Account.java (Custom validator example)
+- com.sampleapp.mvc.validator.AccountValidator.java (Custom validator example)
+
+Reference:
+http://beanvalidation.org/1.1/spec/#introduction
+http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/pdf/hibernate_validator_reference.pdf (Recommended)
+
+2. Spring MVC 3.2 Exception handling using @ControllerAdvice annotation 
+
+Description: 
+Spring MVC 3.2 introduced @ControllerAdvice annotatio
+
+Classes: 
+- com.sampleapp.mvc.controller.AdviceController.java
+
 - Validate against XSS using @SafeHtml validator 
 - RESTful/JSON services using Spring MVC 3.2 
 - Tomcat7 Maven Plugin Config
