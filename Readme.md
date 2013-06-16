@@ -1,5 +1,5 @@
 <h1>Introduction</h1>
-Demo web application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2, including form/bean validations, exception handling, to building RESTful json payloads. There are no static pages for the web application, the focus is on building RESTful JSON services. Future enhancements to include WebSockets 1.0, as well as JMS 2.0 integration with Spring.
+Demo web application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2, including form/bean validations, exception handling, building RESTful JSON payloads. There are no static pages for the web application, the focus is on building RESTful JSON services. Future enhancements to include WebSockets 1.0, as well as JMS 2.0 integration with Spring.
 
 <h2>Setup</h2>
 
