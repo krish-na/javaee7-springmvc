@@ -1,8 +1,16 @@
-Demo application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2. There are no static pages for the web application, the focus is on building RESTful JSON services. This inturn will allow the various clients (web app, mobile) to consume the backend services.
+Introduction
 
-JDK: 7
-Build/Deploy: Maven
-Container: Tomcat 7
+Demo application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2. There are no static pages for the web application, the focus is on building RESTful JSON services.
+
+Setup
+
+JDK7: http://www.oracle.com/technetwork/java/javaee/downloads/index.html
+Maven 3: http://maven.apache.org/index.html
+Tomcat 7: http://tomcat.apache.org/download-70.cgi
+
+1. Fork/Clone the project
+2. Import into your IDE of choice
+3. Run mvn clean install deploy from command line/IDE
 
 Outline: 
 1. Java EE 7: Bean validation using JSR(349) reference implementation Hibernate 
