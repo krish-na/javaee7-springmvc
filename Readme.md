@@ -1,14 +1,15 @@
-Introduction
-
+<h1>Introduction</h1>
 Demo application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2. There are no static pages for the web application, the focus is on building RESTful JSON services.
 
-Setup
+<h2>Setup</h2>
 
-JDK7: http://www.oracle.com/technetwork/java/javaee/downloads/index.html
-Maven 3: http://maven.apache.org/index.html
-Tomcat 7: http://tomcat.apache.org/download-70.cgi
+JDK7: http://www.oracle.com/technetwork/java/javaee/downloads/index.html <br>
+Maven 3: http://maven.apache.org/index.html <br>
+Tomcat 7: http://tomcat.apache.org/download-70.cgi <br>
+ 
+Once JDK7/Maven/Tomcat been installed:
 
-1. Once JDK7/Maven 3 been installed, you need to modifty tomcat-users.xml, this will give you access to Tomcat manager console, as well as Maven privileges to deploy to tomcat instance:
+- Modifty tomcat-users.xml, this will give you access to Tomcat manager console, as well as Maven privileges to deploy to tomcat instance:
 
 (tomcatinstalldir)/conf/tomcat_user.xml
 
@@ -20,7 +21,7 @@ Tomcat 7: http://tomcat.apache.org/download-70.cgi
       <user username="admin" password="password" roles="manager-gui,manager-script,managerjmx,manager-status"/>
     </tomcat-users>
 
-2. Modify Maven's settings.xml:
+- Modify Maven's settings.xml:
 
 .m2/settings.xml or .m2/conf/settings.xml
 
@@ -34,14 +35,14 @@ Add the following under servers element:
       </server>
     <servers>
 
-3. Fork/Clone the project
-4. Import to IDE of choice
-5. From command prompt/IDE, run the following commands to deploy the WAR:
+- Fork/Clone the project
+- Import to IDE of choice
+- From command prompt/IDE, run the following commands to deploy the WAR:
     - mvn clean install deploy
-If maven fails to deploy try the following:
+  If maven fails to deploy try the following:
     - mvn clean install tomcat7: deploy
 
-Outline
+<h2>Outline</h2>
 
 1. Java EE 7: Bean validation using JSR(349) reference implementation Hibernate
 2. Spring MVC 3.2 Exception handling using @ControllerAdvice annotation
@@ -51,7 +52,7 @@ Outline
 6. Websocket 1.0 (Coming soon)
 7. JMS 2.0/Spring support (Coming soon)
 
-1. Java EE 7: Bean validation using JSR(349) reference implementation Hibernate
+<h4>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</h4>
 
 Library: Hibernate Validator 5.0.1.Final
 
@@ -73,7 +74,7 @@ Reference:
 http://beanvalidation.org/1.1/spec/#introduction
 http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/pdf/hibernate_validator_reference.pdf (Recommended)
 
-2. Spring MVC 3.2 Exception handling using @ControllerAdvice annotation
+<h4>Spring MVC 3.2 Exception handling using @ControllerAdvice annotation</h4>
 
 Description:
 Spring MVC 3.2 introduced @ControllerAdvice annotation. ControllerAdvice annotation brings global handle using @ExceptionHandler, which applies to all classes that are annotated with @Controller annotation. Multiple exceptions can be handled in an exception handler method.
@@ -84,7 +85,7 @@ Classes:
 Reference:
 http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.2.html
 
-3. Validate against XSS using @SafeHtml validator
+<h4>Validate against XSS using @SafeHtml validator</h4>
 
 Description: Ever had to deal with XSS and unsafe HTML getting into the system? Well, with the use of @SafeHTML, we can validate form fields to ensure no evil scripts end up in your db.
 
@@ -98,17 +99,13 @@ Library:
 Reference:
 http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/
 
-4. RESTful/JSON services using Spring MVC 3.2
+<h4>RESTful/JSON services using Spring MVC 3.2</h4>
 
 Classes:
 - com.sampleapp.mvc.controller.PrismUserController.java
 
 Description: Show how easy it is to to build RESTful services using Spring MVC 3.2 and Jackson JSON mapper api.
 
-5. Tomcat7 Maven Plugin
+<h4>Tomcat7 Maven Plugin</h4>
 
 Reference: http://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/usage.html
-
-Additional features to be added include:
--Java EE 7: Websocket 1.0 in
--Java EE 7: JMS 2.0 suport for Spring
