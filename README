@@ -37,6 +37,9 @@ Spring MVC 3.2 introduced @ControllerAdvice annotation. ControllerAdvice annotat
 Classes: 
 - com.sampleapp.mvc.controller.AdviceController.java
 
+Reference:
+http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.2.html
+
 3. Validate against XSS using @SafeHtml validator 
 
 Description: Ever had to deal with XSS and unsafe HTML getting into the system? Well, with the use of @SafeHTML, we can validate form fields to ensure no evil scripts end up in your db. 
