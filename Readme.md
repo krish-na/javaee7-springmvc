@@ -52,7 +52,7 @@ Add the following under servers element:
 6. Websocket 1.0 (Coming soon)
 7. JMS 2.0/Spring support (Coming soon)
 
-<b>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</b>
+<h4>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</h4>
 
 Library: Hibernate Validator 5.0.1.Final
 
@@ -74,7 +74,7 @@ Reference:
 http://beanvalidation.org/1.1/spec/#introduction
 http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/pdf/hibernate_validator_reference.pdf (Recommended)
 
-<b>Spring MVC 3.2 Exception handling using @ControllerAdvice annotation</b>
+<h4>Spring MVC 3.2 Exception handling using @ControllerAdvice annotation</h4>
 
 Description:
 Spring MVC 3.2 introduced @ControllerAdvice annotation. ControllerAdvice annotation brings global handle using @ExceptionHandler, which applies to all classes that are annotated with @Controller annotation. Multiple exceptions can be handled in an exception handler method.
@@ -85,7 +85,7 @@ Classes:
 Reference:
 http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.2.html
 
-<b>Validate against XSS using @SafeHtml validator</b>
+<h4>Validate against XSS using @SafeHtml validator</h4>
 
 Description: Ever had to deal with XSS and unsafe HTML getting into the system? Well, with the use of @SafeHTML, we can validate form fields to ensure no evil scripts end up in your db.
 
@@ -99,13 +99,13 @@ Library:
 Reference:
 http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/
 
-<b>RESTful/JSON services using Spring MVC 3.2</b>
+<h4>RESTful/JSON services using Spring MVC 3.2</h4>
 
 Classes:
 - com.sampleapp.mvc.controller.PrismUserController.java
 
 Description: Show how easy it is to to build RESTful services using Spring MVC 3.2 and Jackson JSON mapper api.
 
-<b>Tomcat7 Maven Plugin</b>
+<h4>Tomcat7 Maven Plugin</h4>
 
 Reference: http://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/usage.html
