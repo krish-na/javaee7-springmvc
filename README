@@ -1,1 +1,11 @@
-This file was created by IntelliJ IDEA 12.1.4 for binding GitHub repository
+Demo web application of the PRISM system. Demonstrating some of the key features releases of Java EE 7 and Spring MVC 3.2.
+
+- Java EE 7: Input bean validation (including custom validator) using JSR(349) reference implementation Hibernate Validator 5.0.1.Final 
+- Spring MVC 3.2 Exception handling using @ControllerAdvice annotation 
+- Validate against XSS using @SafeHtml validator 
+- RESTful/JSON services using Spring MVC 3.2 
+- Tomcat7 Maven Plugin Config
+
+Additional features to be added include: 
+-Java EE 7: Websocket 1.0 in 
+-Java EE 7: JMS 2.0 suport for Spring
