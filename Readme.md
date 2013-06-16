@@ -1,5 +1,4 @@
-<h1>Introduction<h1>
-
+<h1>Introduction</h1>
 Demo application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2. There are no static pages for the web application, the focus is on building RESTful JSON services.
 
 <h2>Setup</h2>
@@ -10,7 +9,7 @@ Tomcat 7: http://tomcat.apache.org/download-70.cgi <br>
  
 Once JDK7/Maven/Tomcat been installed:
 
-1. Modifty tomcat-users.xml, this will give you access to Tomcat manager console, as well as Maven privileges to deploy to tomcat instance:
+- Modifty tomcat-users.xml, this will give you access to Tomcat manager console, as well as Maven privileges to deploy to tomcat instance:
 
 (tomcatinstalldir)/conf/tomcat_user.xml
 
@@ -22,7 +21,7 @@ Once JDK7/Maven/Tomcat been installed:
       <user username="admin" password="password" roles="manager-gui,manager-script,managerjmx,manager-status"/>
     </tomcat-users>
 
-2. Modify Maven's settings.xml:
+- Modify Maven's settings.xml:
 
 .m2/settings.xml or .m2/conf/settings.xml
 
@@ -36,11 +35,11 @@ Add the following under servers element:
       </server>
     <servers>
 
-3. Fork/Clone the project
-4. Import to IDE of choice
-5. From command prompt/IDE, run the following commands to deploy the WAR:
+- Fork/Clone the project
+- Import to IDE of choice
+- From command prompt/IDE, run the following commands to deploy the WAR:
     - mvn clean install deploy
-If maven fails to deploy try the following:
+  If maven fails to deploy try the following:
     - mvn clean install tomcat7: deploy
 
 <h2>Outline</h2>
