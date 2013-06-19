@@ -6,6 +6,7 @@ Demo web application demonstrating some of the key features of Java EE 7 and Spr
 JDK7: http://www.oracle.com/technetwork/java/javaee/downloads/java-ee-sdk-7-downloads-1956236.html <br>
 Maven 3: http://maven.apache.org/index.html <br>
 Tomcat 7: http://tomcat.apache.org/download-70.cgi <br>
+MySQL: http://dev.mysql.com/downloads/mysql/
  
 Once JDK7/Maven/Tomcat been installed:
 
@@ -41,6 +42,30 @@ Add the following under servers element:
     - mvn clean install deploy
   If maven fails to deploy try the following:
     - mvn clean install tomcat7: deploy
+- Install MySQL and run the following scripts:
+
+CREATE SCHEMA `prism` ;
+
+
+CREATE  TABLE `prism`.`person` (
+  `firstname` VARCHAR(50) NOT NULL ,
+  `lastname` VARCHAR(50) NULL ,
+  `email` VARCHAR(100) NOT NULL ,
+  `uuid` VARCHAR(50) NOT NULL ,
+  PRIMARY KEY (`email`) );
+
+INSERT INTO `prism`.`person`
+(`firstname`,
+`lastname`,
+`email`,
+`uuid`)
+VALUES
+(
+'john',
+'doe',
+'johndoe@doe.com',
+'a835fe0c-d882-11e2-bbd0-f23c91aec05e'
+);
 
 <h2>Outline</h2>
 
