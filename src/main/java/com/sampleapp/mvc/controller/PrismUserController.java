@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.UUID;
 
 /**
- * Controller for PrismUser purposes. This is a demo to showcase the following:
+ * Controller for PrismUser purposes.
  */
 @Controller
 @RequestMapping("/prismUser")
@@ -32,24 +32,24 @@ public class PrismUserController {
         if (bindingResult.hasErrors()) {
             throw new BadRequestException(bindingResult);
         }
-        //prismUserService.createPrismUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail());
+        prismUserService.createPrismUser(signupForm.getFirstName(),signupForm.getLastName(),signupForm.getEmail());
     }
 
     @RequestMapping(value = "/{uuid}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody PrismUser getUser(@PathVariable UUID uuid) throws RecordNotFoundException {
-        //For purpose of the demo we return a dummy object, else we would execute the following
-        /*
+
         PrismUser prismUser = prismUserService.getPrismUser(uuid);
         if(prismUser == null) {
             throw new RecordNotFoundException("Record not found for user with uuid: " + uuid);
         }
-        */
-
-        PrismUser prismUser = new PrismUser();
-        prismUser.setFirstName("john");
-        prismUser.setLastName(("doe"));
-        prismUser.setEmail("john@doe.com");
         return prismUser;
+    }
+
+    @RequestMapping(value = "/{uuid}", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody void deleteUser(@PathVariable UUID uuid) throws RecordNotFoundException {
+        // In a typical Spring/Web application, we would get uuid of the prism user from session/security context
+        prismUserService.deletePrismUser(uuid);
     }
 }

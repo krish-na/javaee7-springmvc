@@ -1,11 +1,12 @@
 package com.sampleapp.service;
 
 import com.sampleapp.db.domain.Person;
-import com.sampleapp.db.repository.PrismUserRepository;
+import com.sampleapp.db.repository.PersonRepository;
 import com.sampleapp.mvc.exception.RecordNotFoundException;
 import com.sampleapp.mvc.model.PrismUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
@@ -13,21 +14,35 @@ import java.util.UUID;
  * Service facade to handle Prim User's use cases.
  */
 @Service
+@Transactional
 public class PrismUserService {
 
     @Autowired
-    private PrismUserRepository prismUserRepository;
-
-    public void createPrismUser(String firstName, String lastName, String email) {
-        prismUserRepository.create(new Person(firstName,lastName,email));
-    }
+    private PersonRepository personRepository;
 
     public PrismUser getPrismUser(UUID uuid) throws RecordNotFoundException {
-        Person person = prismUserRepository.get(uuid);
+        Person person = getPersonByUuid(uuid);
+        return convertPersontoPrismUser(person);
+    }
+
+    public void createPrismUser(String firstName, String lastName, String email) {
+        Person person = new Person(firstName, lastName, email);
+        personRepository.save(person);
+    }
+
+    public void deletePrismUser(UUID uuid) throws RecordNotFoundException{
+        Person person = getPersonByUuid(uuid);
+        if(person != null) {
+            personRepository.delete(person);
+        }
+    }
+
+    public Person getPersonByUuid(UUID uuid) throws RecordNotFoundException {
+        Person person = personRepository.findByUuid(uuid);
         if(person == null) {
             throw new RecordNotFoundException("Person not found with UUID: " + uuid);
         }
-        return convertPersontoPrismUser(person);
+        return person;
     }
 
     // We convert a domain/entity object (Person) to a model object (PrismUser). This way,

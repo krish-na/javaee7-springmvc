@@ -1,21 +1,34 @@
 package com.sampleapp.db.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * User of the Prism system. Implementation dependent on persistence store (SQL or NoSQL).
  *
  */
-public class Person {
+@Entity
+public class Person implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
     private String id;
 
+    @Column
     private String firstName;
 
+    @Column
     private String lastName;
 
+    @Column
     private String email;
 
+    @Column
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private UUID uuid;
 
     public Person(String firstName, String lastName, String email) {
