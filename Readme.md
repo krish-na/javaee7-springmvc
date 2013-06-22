@@ -85,8 +85,11 @@ Add the following under servers element:
   If maven fails to deploy try the following:
     - mvn clean install tomcat7: deploy
 
+- Sample RESTful requests using Postman extension in Google Chrome. You can import them directly: 
+  - http://www.getpostman.com/collections/f223fe2aa8ce65baa6e6
 
-<h4>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</h4>
+
+<h3>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</h3>
 
 Library: Hibernate Validator 5.0.1.Final
 
@@ -99,7 +102,8 @@ Classes:
 - com.sampleapp.mvc.validator.AccountValidator.java (Custom validator example)
 
 Sampel URLs to test Form validation
-You could use Postman - REST client Chrome extension to invoke REST calls. To import in Postman - http://www.getpostman.com/collections/930526effaffc5f1c721
+You could use Postman - REST client Chrome extension to invoke REST calls. To import in Postman:
+  - http://www.getpostman.com/collections/f223fe2aa8ce65baa6e6
 
 - POST: http://localhost:8080/sampleapp/prismUser
 - Form data: firstName, lastName, email
@@ -108,7 +112,7 @@ Reference:
 http://beanvalidation.org/1.1/spec/#introduction
 http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/pdf/hibernate_validator_reference.pdf (Recommended)
 
-<h4>Spring MVC 3.2 Exception handling using @ControllerAdvice annotation</h4>
+<h3>Spring MVC 3.2 Exception handling using @ControllerAdvice annotation</h3>
 
 Description:
 Spring MVC 3.2 introduced @ControllerAdvice annotation. ControllerAdvice annotation brings global handle using @ExceptionHandler, which applies to all classes that are annotated with @Controller annotation. Multiple exceptions can be handled in an exception handler method.
@@ -119,7 +123,7 @@ Classes:
 Reference:
 http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.2.html
 
-<h4>Validate against XSS using @SafeHtml validator</h4>
+<h3>Validate against XSS using @SafeHtml validator</h3>
 
 Description: Ever had to deal with XSS and unsafe HTML getting into the system? Well, with the use of @SafeHTML, we can validate form fields to ensure no evil scripts end up in your db.
 
@@ -133,14 +137,14 @@ Library:
 Reference:
 http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/
 
-<h4>RESTful/JSON services using Spring MVC 3.2</h4>
+<h3>RESTful/JSON services using Spring MVC 3.2</h3>
 
 Classes:
 - com.sampleapp.mvc.controller.PrismUserController.java
 
 Description: Show how easy it is to to build RESTful services using Spring MVC 3.2 and Jackson JSON mapper api.
 
-<h4>Web Application Init using JavaConfig</h4>
+<h3>Web Application Init using JavaConfig</h3>
 
 Description: Making use of Servlet 3.0 and Tomcat 7, we can discard web.xml, as well as Spring config files. No more xml files!
 
@@ -148,6 +152,6 @@ Classes:
 - com.sampleapp.init.WebAppInitializer.java
 - com.sampleapp.db.repository.PersistenceConfiguration.java 
 
-<h4>Tomcat7 Maven Plugin</h4>
+<h3>Tomcat7 Maven Plugin</h3>
 
 Reference: http://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/usage.html
