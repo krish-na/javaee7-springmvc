@@ -19,7 +19,7 @@ Maven 3: http://maven.apache.org/index.html <br>
 Tomcat 7: http://tomcat.apache.org/download-70.cgi <br>
 MySQL: http://dev.mysql.com/downloads/mysql/
  
-Once JDK7/Maven/Tomcat been installed:
+Once JDK7/Maven/Tomcat7/MySQL been installed:
 
 - Modifty tomcat-users.xml, this will give you access to Tomcat manager console, as well as Maven privileges to deploy to tomcat instance:
 
@@ -48,12 +48,8 @@ Add the following under servers element:
     <servers>
 
 - Fork/Clone the project
-- Import to IDE of choice
-- From command prompt/IDE, run the following commands to deploy the WAR:
-    - mvn clean install deploy
-  If maven fails to deploy try the following:
-    - mvn clean install tomcat7: deploy
-- Install MySQL and run the following scripts:
+- Import project to IDE of choice
+- Run the following scripts from mysql cmd or MySQL Workbench
 
    CREATE SCHEMA `prism` ;
 
@@ -83,6 +79,11 @@ Add the following under servers element:
    'johndoe@doe.com',
    'a835fe0c-d882-11e2-bbd0-f23c91aec05e'
    );
+   
+- From command prompt/IDE, run the following commands to deploy the WAR:
+    - mvn clean install deploy
+  If maven fails to deploy try the following:
+    - mvn clean install tomcat7: deploy
 
 
 <h4>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</h4>
