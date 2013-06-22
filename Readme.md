@@ -142,7 +142,7 @@ Description: Show how easy it is to to build RESTful services using Spring MVC 3
 
 <h4>Web Application Init using JavaConfig</h4>
 
-Description: Making use of Servlet 3.0 and Tomcat 7, we can discard web.xml, as well as Spring convig files. No more xml files!
+Description: Making use of Servlet 3.0 and Tomcat 7, we can discard web.xml, as well as Spring config files. No more xml files!
 
 Classes:
 - com.sampleapp.init.WebAppInitializer.java
