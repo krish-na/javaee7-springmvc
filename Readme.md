@@ -54,7 +54,7 @@ CREATE TABLE `prism`.`person` (
   `email` varchar(100) NOT NULL,
   `uuid` varchar(50) NOT NULL,
   PRIMARY KEY (`id`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1$$
+) ENGINE=InnoDB AUTO_INCREMENT=2
 
 INSERT INTO `prism`.`person`
 (`id`,
