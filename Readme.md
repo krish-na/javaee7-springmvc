@@ -58,8 +58,8 @@ CREATE TABLE `prism`.`person` (
 
 INSERT INTO `prism`.`person`
 (`id`,
-`firstname`,
-`lastname`,
+`first_name`,
+`last_name`,
 `email`,
 `uuid`)
 VALUES
