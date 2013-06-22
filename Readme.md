@@ -1,5 +1,16 @@
 <h1>Introduction</h1>
-Demo web application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2, including form/bean validations, Spring's exception handling, building RESTful JSON services. There are no static pages for the web application, the focus is on building RESTful JSON services. Future enhancements to include WebSockets 1.0, as well as JMS 2.0 integration with Spring.
+Demo web application demonstrating some of the key features of Java EE 7 and Spring MVC 3.2, including form/bean validations, Spring's exception handling, building RESTful JSON services, and web application initilization using JavaConfig (no Xml at all). There are no static pages for the web application, the focus is on building RESTful JSON services. Future enhancements to include WebSockets 1.0, as well as JMS 2.0 integration with Spring.
+
+<h2>Outline</h2>
+
+1. Java EE 7: Bean validation using JSR(349) reference implementation Hibernate
+2. Spring MVC 3.2 Exception handling using @ControllerAdvice annotation
+3. Validate against XSS using @SafeHtml validator
+4. RESTful/JSON services using Spring MVC 3.2
+5. Web App Init using JavaConfig, no web.xml or any xml config (Thanks @joshlong)
+6. Tomcat7 Maven Plugin Config
+7. Websocket 1.0 (Coming soon)
+8. JMS 2.0/Spring support (Coming soon)
 
 <h2>Setup</h2>
 
@@ -44,44 +55,35 @@ Add the following under servers element:
     - mvn clean install tomcat7: deploy
 - Install MySQL and run the following scripts:
 
-CREATE SCHEMA `prism` ;
+   CREATE SCHEMA `prism` ;
 
 
-CREATE TABLE `Person` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(36) DEFAULT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 
+   CREATE TABLE `Person` (
+     `id` int(11) NOT NULL AUTO_INCREMENT,
+     `uuid` varchar(36) DEFAULT NULL,
+     `first_name` varchar(50) NOT NULL,
+     `last_name` varchar(50) DEFAULT NULL,
+     `email` varchar(100) NOT NULL,
+     PRIMARY KEY (`id`),
+     UNIQUE KEY `email_UNIQUE` (`email`),
+     UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+   ) ENGINE=InnoDB AUTO_INCREMENT=20 
 
-INSERT INTO `prism`.`person`
-(`id`,
-`first_name`,
-`last_name`,
-`email`,
-`uuid`)
-VALUES
-(
-1,
-'john',
-'doe',
-'johndoe@doe.com',
-'a835fe0c-d882-11e2-bbd0-f23c91aec05e'
-);
+   INSERT INTO `prism`.`person`
+   (`id`,
+   `first_name`,
+   `last_name`,
+   `email`,
+   `uuid`)
+   VALUES
+   (
+   1,
+   'john',
+   'doe',
+   'johndoe@doe.com',
+   'a835fe0c-d882-11e2-bbd0-f23c91aec05e'
+   );
 
-<h2>Outline</h2>
-
-1. Java EE 7: Bean validation using JSR(349) reference implementation Hibernate
-2. Spring MVC 3.2 Exception handling using @ControllerAdvice annotation
-3. Validate against XSS using @SafeHtml validator
-4. RESTful/JSON services using Spring MVC 3.2
-5. Tomcat7 Maven Plugin Config
-6. Websocket 1.0 (Coming soon)
-7. JMS 2.0/Spring support (Coming soon)
 
 <h4>Java EE 7: Bean validation using JSR(349) reference implementation Hibernate</h4>
 
@@ -136,6 +138,14 @@ Classes:
 - com.sampleapp.mvc.controller.PrismUserController.java
 
 Description: Show how easy it is to to build RESTful services using Spring MVC 3.2 and Jackson JSON mapper api.
+
+<h4>Web Application Init using JavaConfig</h4>
+
+Description: Making use of Servlet 3.0 and Tomcat 7, we can discard web.xml, as well as Spring convig files. No more xml files!
+
+Classes:
+- com.sampleapp.init.WebAppInitializer.java
+- com.sampleapp.db.repository.PersistenceConfiguration.java 
 
 <h4>Tomcat7 Maven Plugin</h4>
 
