@@ -1,12 +1,9 @@
-package com.sampleapp.webapp;
+package com.sampleapp.init;
 
+import com.sampleapp.db.repository.PersistenceConfiguration;
 import org.springframework.context.annotation.*;
-import org.springframework.web.filter.HiddenHttpMethodFilter;
-import org.springframework.web.multipart.support.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
-import javax.servlet.*;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -22,22 +19,13 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/sampleapp/"};
-    }
-
-    @Override
-    protected Filter[] getServletFilters() {
-        return new Filter[]{new HiddenHttpMethodFilter(), new MultipartFilter()};
+        return new String[]{"/sampleapp/*"};
     }
 }
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.sampleapp.mvc.controller","com.sampleapp.mvc.exception",
-        "com.sampleapp.service","com.sampleapp.db.repository"})
+@ComponentScan(basePackages = {"com.sampleapp.mvc.controller","com.sampleapp.service"})
 class WebMvcConfiguration  {
-
-
-
 
 }

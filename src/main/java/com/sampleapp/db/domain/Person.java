@@ -1,22 +1,21 @@
 package com.sampleapp.db.domain;
 
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * User of the Prism system. Implementation dependent on persistence store (SQL or NoSQL).
+ * User of the Prism system.
  *
  */
 @Entity
-public class Person implements Serializable {
+public class Person implements Serializable, UUIDType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", unique = true, nullable = false)
-    private String id;
+    @GeneratedValue
+    private Long id;
 
     @Column
     private String firstName;
@@ -28,16 +27,11 @@ public class Person implements Serializable {
     private String email;
 
     @Column
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Type(type = "uuid-char")
     private UUID uuid;
 
-    public Person(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-
     public String getEmail() {
+        UUID.randomUUID();
         return email;
     }
 
@@ -69,11 +63,11 @@ public class Person implements Serializable {
         this.uuid = uuid;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

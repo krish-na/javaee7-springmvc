@@ -26,7 +26,11 @@ public class PrismUserService {
     }
 
     public void createPrismUser(String firstName, String lastName, String email) {
-        Person person = new Person(firstName, lastName, email);
+        Person person = new Person();
+        person.setFirstName(firstName);
+        person.setLastName(lastName);
+        person.setEmail(email);
+        person.setUuid(UUID.randomUUID());
         personRepository.save(person);
     }
 
@@ -46,12 +50,13 @@ public class PrismUserService {
     }
 
     // We convert a domain/entity object (Person) to a model object (PrismUser). This way,
-    // we don't return unnecessary domain/entity data to the client, for example row id
+    // we don't return unnecessary domain/entity data to the client, ex. id or uuid
     public PrismUser convertPersontoPrismUser(Person person) {
         if(person == null) return null;
         PrismUser prismUser = new PrismUser();
         prismUser.setFirstName(person.getFirstName());
-        prismUser.setLastName(person.getFirstName());
+        prismUser.setLastName(person.getLastName());
+        prismUser.setEmail(person.getEmail());
         return prismUser;
     }
 }

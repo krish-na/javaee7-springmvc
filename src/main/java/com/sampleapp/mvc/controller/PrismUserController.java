@@ -38,7 +38,6 @@ public class PrismUserController {
     @RequestMapping(value = "/{uuid}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody PrismUser getUser(@PathVariable UUID uuid) throws RecordNotFoundException {
-
         PrismUser prismUser = prismUserService.getPrismUser(uuid);
         if(prismUser == null) {
             throw new RecordNotFoundException("Record not found for user with uuid: " + uuid);

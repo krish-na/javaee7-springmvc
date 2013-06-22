@@ -7,7 +7,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * Bean class used to validate input fields.
+ * Bean class used to validate input fields. Annotations validators can also applied to method parameters as well as return
+ * values. Look at the following hibernate manual, section 3.1.
  *
  * @SafeHtml annotation can be used to validate against malicious code
  * http://docs.jboss.org/hibernate/validator/5.0/api/index.html?org/hibernate/validator/constraints/SafeHtml.html
