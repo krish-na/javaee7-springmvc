@@ -47,14 +47,16 @@ Add the following under servers element:
 CREATE SCHEMA `prism` ;
 
 
-CREATE TABLE `prism`.`person` (
+CREATE TABLE `Person` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(36) DEFAULT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `uuid` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `uuid_UNIQUE` (`uuid`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 
 
 INSERT INTO `prism`.`person`
 (`id`,
