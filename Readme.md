@@ -7,7 +7,7 @@ Demo web application demonstrating some of the key features of Java EE 7 and Spr
 2. Spring MVC 3.2 Exception handling using @ControllerAdvice annotation
 3. Validate against XSS using @SafeHtml validator
 4. RESTful/JSON services using Spring MVC 3.2
-5. Web App Init using JavaConfig, no web.xml or any xml config (Thank you Josh Long: https://twitter.com/starbuxman & github.com/joshlong)
+5. Web App Init using JavaConfig, no web.xml or any xml config (Thank you Josh Long: https://twitter.com/starbuxman & https://github.com/joshlong)
 6. Tomcat7 Maven Plugin Config
 7. Websocket 1.0 (Coming soon)
 8. JMS 2.0/Spring support (Coming soon)
