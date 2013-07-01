@@ -80,10 +80,10 @@ Add the following under servers element:
    'a835fe0c-d882-11e2-bbd0-f23c91aec05e'
    );
    
-- From command prompt/IDE, run the following commands to deploy the WAR:
+- From command prompt/IDE, run the following commands to deploy the WAR. Ensure your Tomcat7 instance is running:
     - mvn clean install deploy
   If maven fails to deploy try the following:
-    - mvn clean install tomcat7: deploy
+    - mvn clean install tomcat7:deploy
 
 - Sample RESTful requests using Postman extension in Google Chrome. You can import them directly: 
   - http://www.getpostman.com/collections/f223fe2aa8ce65baa6e6
